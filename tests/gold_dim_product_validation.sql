@@ -5,6 +5,12 @@ FROM ecommerce_gold.dim_product
 GROUP BY ProductID
 HAVING numberofproductids > 1
 
+--Check for no null product ID. Result: 0 rows returned.
+
+SELECT ProductID
+FROM ecommerce_gold.dim_product
+WHERE ProductID IS NULL
+
 --Chose 3 product IDs with variations of product descriptions and checked that table kept the most frequent description for each product. Compared it to silver layer table frequency count.
 
 SELECT *
