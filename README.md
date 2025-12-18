@@ -35,4 +35,23 @@ Transformations applied to create clean Silver Layer table (refer to clean_onlin
 Data quality checks were applied to validate Silver-layer transformation (refer to silver_data_validation.sql in tests folder):
 - Confirmed no null Customer IDs. 
 - Confirmed no negative price. 
-- Confirmed revenue calculation. 
+- Confirmed revenue calculation.
+
+# Gold Layer: Fact and Dimension Tables
+
+Product Dimension Table: Represents unique products in ecommerce dataset
+
+Goal: 
+- Ensure one row per product for analytics and dashboard purposes.
+- Resolve multiple descriptions per product found in the Silver layer.
+
+Transformation to create dim_product table (refer to dim_product.sql in sql/gold folder):
+- Counts description frequency per product in Silver Layer (description_counts)
+- Rank descriptions per product by frequency (ranked_descriptions)
+- Select the top-ranked description (rn = 1) to keep in the dimension table.
+
+Data quality checks were applied to validate Gold-layer transformation for dim_product table (refer to gold_dim_product_validation.sql in tests folder):
+- Confirmed that ProductID is unique
+- Spot checked for description correctness: Verified that the description chosen for each product matches the most frequent description in the Silver layer.
+
+
