@@ -67,11 +67,17 @@ Goal:
 
 Approach:
 - Selected the most recent country per customer based on InvoiceDate.
-- Ensures consistency and a single country value for each customer in analytics.
+  - Ensures consistency and a single country value for each customer in analytics.
+- Observed that 13 customers had country changes over time.  
+  - These changes were due to real-world behavior (e.g., relocation or billing changes).  
+  - For simplicity in this project, only the most recent country was kept (Type 1 Slowly Changing Dimension).  
+  - Optionally, a Type 2 SCD could be implemented in a production scenario to track historical country changes.
 
 Transformation to create dim_customer table (refer to dim_customer.sql in sql/gold folder):
-
-...
+- Groups all orders by each customer (PARTITION BY CustomerID)
+- Sorts each customer’s orders from most recent to oldest (ORDER BY InvoiceDate DESC)
+- Assigns a rank to each row within the customer’s orders, wherein, the most recent order gets rn = 1.
+- Keeps only the latest country per customer.
 
 Data quality checks were applied to validate Gold-layer transfomration for dim_customer table (refer to gold_dim_customer_validation.sql in tests folder):
 - Confirmed that CustomerID is unique
