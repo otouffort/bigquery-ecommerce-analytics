@@ -13,6 +13,12 @@ GROUP BY StockCode
 HAVING description_count>1
 ORDER BY StockCode
 
+SELECT  StockCode, ARRAY_AGG(DISTINCT Description)
+FROM ecommerce_silver.clean_online_retail
+GROUP BY StockCode
+HAVING COUNT(DISTINCT Description) > 1
+ORDER BY StockCode
+
 --Investigate choosing product description for products with variations of product descriptions based on how frequently it appears.
 
 SELECT StockCode, Description, COUNT(*) as numberofproductids
@@ -40,4 +46,16 @@ SELECT CustomerID, COUNT(DISTINCT Country) as country_count
 FROM ecommerce_silver.clean_online_retail
 GROUP BY CustomerID
 HAVING country_count>1
+ORDER BY CustomerID
+
+--Investigate why the 13 customers have two associated countries. Result: InvoiceDate shows that customer changed their billing/shipping country over time.
+
+SELECT *
+FROM ecommerce_silver.clean_online_retail
+WHERE CustomerID IN (
+    SELECT CustomerID
+    FROM ecommerce_silver.clean_online_retail
+    GROUP BY CustomerID
+    HAVING COUNT(DISTINCT Country) > 1
+)
 ORDER BY CustomerID
