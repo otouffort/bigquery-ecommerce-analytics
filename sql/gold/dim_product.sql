@@ -1,4 +1,4 @@
---Product dimension table with product attributes. Product Description assigned based on top frequency. 
+--Product dimension table with product attributes. Product description assigned based on highest frequency count in silver layer table. 
 
 CREATE OR REPLACE TABLE ecommerce_gold.dim_products AS
 WITH description_counts AS (
