@@ -1,6 +1,6 @@
 --Product dimension table with product attributes. Product description assigned based on highest frequency count in silver layer table. 
 
-CREATE OR REPLACE TABLE ecommerce_gold.dim_products AS
+CREATE OR REPLACE TABLE ecommerce_gold.dim_product AS
 WITH description_counts AS (
     SELECT
         StockCode AS ProductID,
