@@ -1,3 +1,10 @@
+--Check for no duplicate customer IDs. Result: 0 rows returned.
+
+SELECT CustomerID, COUNT(*) as numberofcustomerids
+FROM ecommerce_gold.dim_customer
+GROUP BY CustomerID
+HAVING numberofcustomerids > 1
+
 --Check for no null customer ID. Result: 0 rows returned.
 
 SELECT CustomerID
