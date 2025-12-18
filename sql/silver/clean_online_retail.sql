@@ -1,4 +1,4 @@
--- Silver layer: cleaned and standardized ecommerce transactions
+-- Silver layer: cleaned table with revenue calculation
 
 CREATE OR REPLACE TABLE ecommerce_silver.clean_online_retail AS
 SELECT
