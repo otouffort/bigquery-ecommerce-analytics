@@ -15,7 +15,7 @@ Data quality checks were applied to validate Bronze-layer transformation (refer 
 - Consistent non-null values row counts before and after transformation
 - Correct formatting of IDs
 
-Data Profiling of Bronze Layer before creating Silver Layer to understand potential data quality issues (refer to bronze_investigating_data.sql in tests folder):
+Data investigation of Bronze Layer before creating Silver Layer to understand potential data quality issues (refer to bronze_investigating_data.sql in tests folder):
 - Check for negative prices. Result: 5 rows with negative prices
 - Check for negative quantities (returns). Result: 22,950 rows indicate returned items. Note: Returns are kept in the dataset for future revenue and refund analysis.
 - Check for null customer IDs. Result: 243,007 of 1,067,371 rows are missing customer IDs
@@ -37,9 +37,13 @@ Data quality checks were applied to validate Silver-layer transformation (refer 
 - Confirmed no negative price. 
 - Confirmed revenue calculation.
 
+Data investigation of Silver Layer before creating Gold Layer to understand potential issues (refer to silver_investigating_data.sql in tests folder):
+
+...
+
 # Gold Layer: Fact and Dimension Tables
 
-Product Dimension Table: Represents unique products in ecommerce dataset
+Product Dimension Table: Represents unique products in ecommerce dataset and product attributes.
 
 Goal: 
 - Ensure one row per product for analytics and dashboard purposes.
@@ -52,6 +56,25 @@ Transformation to create dim_product table (refer to dim_product.sql in sql/gold
 
 Data quality checks were applied to validate Gold-layer transformation for dim_product table (refer to gold_dim_product_validation.sql in tests folder):
 - Confirmed that ProductID is unique
+- Confirmed no null ProductIDs
 - Spot checked for description correctness: Verified that the description chosen for each product matches the most frequent description in the Silver layer.
 
+Customer Dimension Table: Represents unique customers in ecommerce dataset and customer attributes.
+
+Goal: 
+- Ensure one row per CustomerID for analytics and dashboard purposes.
+- Resolve customers associated with multiple countries over time.
+
+Approach:
+- Selected the most recent country per customer based on InvoiceDate.
+- Ensures consistency and a single country value for each customer in analytics.
+
+Transformation to create dim_customer table (refer to dim_customer.sql in sql/gold folder):
+
+...
+
+Data quality checks were applied to validate Gold-layer transfomration for dim_customer table (refer to gold_dim_customer_validation.sql in tests folder):
+- Confirmed that CustomerID is unique
+- Confirmed no null Customer ID
+- Spot-checked customers with multiple countries to confirme that most recent country was selected.
 
