@@ -112,14 +112,24 @@ Data quality checks were applied to validate Gold-layer transformation for fact_
 1. Top Customers by Revenue
 - Question: Which customers are the most valuable in terms of total revenue and what is their average order value?
 - Business insight: Helps target high-value customers for marketing campaigns or loyalty programs.
-- SQL skills: CTEs, Aggregations, Derived Metrics, Joins, Ordering and Filtering
 
 2. Top Products by Revenue
 - Question: Which products generate the most revenue and which products sell the most units?
 - Business insight: Helps identify best-selling and highest-revenue products. Can help inform inventory management. 
-- SQL skills: Joins, Aggregations, Grouping, Ordering and limiting
 
-3. 
+3. Products with No Revenue
+- Question: Which products have generated no revenue?
+- Business insight: Helps identify underperforming or inactive products.
+  
+4. Revenue by Month
+- Question: How has monthly revenue changed over time?
+- Business insight: Identifies underperforming or inactive products. This is useful for forecasting, marketing plans, and sales analysis.
+
+5. Customer Purchase Activity
+- Question:
+
+7. Customer Retention
+- Question: 
 
 ### Fact Orders Optimization
 
