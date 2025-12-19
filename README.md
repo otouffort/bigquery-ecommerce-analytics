@@ -1,4 +1,4 @@
-# BigQuery E-Commerce Analytics Pipeline
+# Google BigQuery E-Commerce Analytics Pipeline
 
 <img width="1080" height="584" alt="ArchitectureDiagram" src="https://github.com/user-attachments/assets/706e57ed-be78-4c0b-a937-b97ab9d4637d" />
 
@@ -182,9 +182,9 @@ Additionally, clustering by CustomerID and ProductID could further speed up quer
 
 For this project, partitioning and clustering were not implemented to simplify setup, but the table design is compatible with these optimizations.
 
-#  Dashboard
+#  Looker Studio Dashboard
 
-A Looker Studio dashboard was created on top of the gold-layer tables to visualize key e-commerce metrics. The dashboard focuses on revenue trends, customer behavior, product performance, and retention analysis.
+A Looker Studio executive-level dashboard was created on top of the gold-layer tables to visualize key e-commerce metrics. The dashboard features KPI cards, revenue over time, and ranked tables for top products and customers.
 
-All metrics are derived directly from the fact_orders table, ensuring consistency between analytics queries and visualizations.
+<img width="1438" height="1077" alt="LookerStudioDashboard" src="https://github.com/user-attachments/assets/f98d5aae-9b3c-4ead-aa8b-99c98f4ff403" />
 
