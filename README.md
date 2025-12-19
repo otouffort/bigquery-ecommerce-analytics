@@ -107,11 +107,14 @@ Data quality checks were applied to validate Gold-layer transformation for fact_
 - No null foreign keys
 - Confirmed that total revenue in gold layer matches total revenue in silver layer
 
-# Analytics
+# Analytics/Insights
 
 1. Top Products by Revenue
-- Question: 
+- Question: Which customers are the most valuable in terms of total revenue and what is their average order value?
+- Business insight: Helps target high-value customers for marketing campaigns or loyalty programs.
+- SQL skills: CTEs, Aggregations, Derived Metrics, Joins, Ordering and Filtering
 
+2. 
 
 
 ### Fact Orders Optimization
