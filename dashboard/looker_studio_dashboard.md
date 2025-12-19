@@ -1,1 +1,1 @@
-<img width="1438" height="1077" alt="LookerStudioDashboard" src="https://github.com/user-attachments/assets/e06688eb-d97b-402e-b061-d2a703b48751" />
+<img width="1434" height="1072" alt="LookerStudioDashboard" src="https://github.com/user-attachments/assets/2f643163-4369-4f66-813f-0e1a6a8c1749" />
