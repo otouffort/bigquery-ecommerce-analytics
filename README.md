@@ -4,7 +4,9 @@
 
 # Project Overview
 
-This project demonstrates a full e-commerce data pipeline built using Google BigQuery, showcasing skills in data ingestion, cleaning, transformation, dimensional modeling, and analytics. The dataset used is the Online Retail II dataset from Kaggle, which contains transactional data for an online retail store. Tech Stack: Google BigQuery, SQL, Looker Studio.
+This project demonstrates a full e-commerce data pipeline built using Google BigQuery, showcasing skills in data ingestion, cleaning, transformation, dimensional modeling, and analytics. Tech Stack: Google BigQuery, SQL, Looker Studio.
+
+The dataset used is the Online Retail II dataset from Kaggle, which contains transactional data for an online retail store.
 
 The project follows a medallion architecture:
 - Bronze Layer: Raw transactional data is ingested into BigQuery, preserving the original dataset.
