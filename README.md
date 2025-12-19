@@ -87,8 +87,9 @@ Goal:
 - Include derived metrics for quick analysis (e.g., revenue per line).
 
 Transformation to create fact_orders table (refer to fact_orders.sql in sql/gold folder):
-
-...
+- Generate a surrogate key
+- Renamed columns for clarity and consistency
+- Added derived revenue metric
 
 Data quality checks were applied to validate Gold-layer transformation for fact_orders table (refer to gold_fact_orders_validation.sql in tests folder):
 - Uniqueness of surrogate key
