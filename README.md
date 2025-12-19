@@ -60,7 +60,7 @@ Data investigation of Bronze Layer before creating Silver Layer to understand po
 - Check for negative quantities (returns). Result: 22,950 rows indicate returned items. Note: Returns are kept in the dataset for future revenue and refund analysis.
 - Check for null customer IDs. Result: 243,007 of 1,067,371 rows are missing customer IDs
 
-# Silver Layer: Cleaned and Enriched E-commerce Transactions
+# Silver Layer: Cleaned and Enriched E-Commerce Transactions
 
 The Silver layer contains cleaned and standardized data from the Bronze layer. This layer ensures data quality for downstream Gold tables and dashboard visualizations.
 
