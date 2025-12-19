@@ -1,4 +1,4 @@
-# BigQuery E-commerce Analytics Pipeline
+# BigQuery E-Commerce Analytics Pipeline
 
 <img width="1080" height="584" alt="ArchitectureDiagram" src="https://github.com/user-attachments/assets/706e57ed-be78-4c0b-a937-b97ab9d4637d" />
 
