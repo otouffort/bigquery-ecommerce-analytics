@@ -86,7 +86,7 @@ Data investigation of Silver Layer before creating Gold Layer to understand pote
 - Investigation for fact_orders gold layer table. 
   - Check for null Invoice IDs. Result: 0 rows with null Invoice.
   - Check for one row per order line item (order line is combination of Invoice, StockCode, and CustomerID). Result: found that the same product appears more than once in the same invoice for the same customer
-  -Investigate why the same product appears more than once in the same invoice for the same customer. Looked into three order line items that had the issue. Result: Noticed that duplicate combination occurs because of price or quantity changes. Shows that silver table reflects a transactional system (order line events) instead of order line item data.
+  - Investigate why the same product appears more than once in the same invoice for the same customer. Looked into three order line items that had the issue. Result: Noticed that duplicate combination occurs because of price or quantity changes. Shows that silver table reflects a transactional system (order line events) instead of order line item data.
 
 # Gold Layer: Fact and Dimension Tables
 
