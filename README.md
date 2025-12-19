@@ -126,7 +126,8 @@ Data quality checks were applied to validate Gold-layer transformation for fact_
 - Business insight: Identifies underperforming or inactive products. This is useful for forecasting, marketing plans, and sales analysis.
 
 5. Customer Purchase Activity
-- Question:
+- Question: Which customers are the most active? How long have they been making purchases, and how frequently?
+- Business insight: Highlights top customers by engagement, showing who places the most orders.
 
 7. Customer Retention
 - Question: 
