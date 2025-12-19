@@ -182,3 +182,9 @@ Additionally, clustering by CustomerID and ProductID could further speed up quer
 
 For this project, partitioning and clustering were not implemented to simplify setup, but the table design is compatible with these optimizations.
 
+#  Dashboard
+
+A Looker Studio dashboard was created on top of the gold-layer tables to visualize key e-commerce metrics. The dashboard focuses on revenue trends, customer behavior, product performance, and retention analysis.
+
+All metrics are derived directly from the fact_orders table, ensuring consistency between analytics queries and visualizations.
+
