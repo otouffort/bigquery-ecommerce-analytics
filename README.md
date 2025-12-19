@@ -79,8 +79,22 @@ Transformation to create dim_customer table (refer to dim_customer.sql in sql/go
 - Assigns a rank to each row within the customer’s orders, wherein, the most recent order gets rn = 1.
 - Keeps only the latest country per customer.
 
-Data quality checks were applied to validate Gold-layer transfomration for dim_customer table (refer to gold_dim_customer_validation.sql in tests folder):
+Data quality checks were applied to validate Gold-layer transformation for dim_customer table (refer to gold_dim_customer_validation.sql in tests folder):
 - Confirmed that CustomerID is unique
 - Confirmed no null Customer ID
 - Spot-checked customers with multiple countries to confirme that most recent country was selected.
 
+Fact Orders Table: Represents transactional data (order line events).
+
+Goal:
+- Capture one row per order line event
+- Keep the schema clean and normalized: descriptive attributes like product name and customer country remain in dimension tables.
+- Include derived metrics for quick analysis (e.g., revenue per line).
+
+Transformation to create fact_orders table (refer to fact_orders.sql in sql/gold folder):
+
+...
+
+Data quality checks were applied to validate Gold-layer transformation for fact_orders table (refer to gold_fact_orders_validation.sql in tests folder):
+
+...
