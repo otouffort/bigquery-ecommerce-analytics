@@ -115,8 +115,11 @@ Data quality checks were applied to validate Gold-layer transformation for fact_
 - SQL skills: CTEs, Aggregations, Derived Metrics, Joins, Ordering and Filtering
 
 2. Top Products by Revenue
-- 
+- Question: Which products generate the most revenue and which products sell the most units?
+- Business insight: Helps identify best-selling and highest-revenue products. Can help inform inventory management. 
+- SQL skills: Joins, Aggregations, Grouping, Ordering and limiting
 
+3. 
 
 ### Fact Orders Optimization
 
