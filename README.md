@@ -41,7 +41,8 @@ Data investigation of Silver Layer before creating Gold Layer to understand pote
   - Check for null CustomerIDs. Result: 0 rows with null CustomerIDs
   - Check for CustomerID with more than one country. Result: 13 of 5,939 customers with two associated countries. 
   - Investigate why the 13 customers have two associated countries. Result: InvoiceDate shows that customer changed their billing/shipping country over time.
-- Investigation for fact_orders gold layer table.
+- Investigation for fact_orders gold layer table. 
+  - Check for null Invoice numbers. Result: 0 rows with null Invoice.
   - Check for one row per order line item (order line is combination of Invoice, StockCode, and CustomerID). Result: found that the same product appears more than once in the same invoice for the same customer
   -Investigate why the same product appears more than once in the same invoice for the same customer. Looked into three order line items that had the issue. Result: Noticed that duplicate combination occurs because of price or quantity changes. Shows that silver table reflects a transactional system (order line events) instead of order line item data.
 
