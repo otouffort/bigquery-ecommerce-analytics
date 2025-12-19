@@ -187,5 +187,4 @@ For this project, partitioning and clustering were not implemented to simplify s
 
 A Looker Studio executive-level dashboard was created on top of the gold-layer tables to visualize key e-commerce metrics. The dashboard features KPI cards, revenue over time, and ranked tables for top products and customers.
 
-<img width="1438" height="1077" alt="LookerStudioDashboard" src="https://github.com/user-attachments/assets/f98d5aae-9b3c-4ead-aa8b-99c98f4ff403" />
-
+<img width="1434" height="1072" alt="LookerStudioDashboard" src="https://github.com/user-attachments/assets/70e96b05-da95-4d90-ac5a-e339f634e62d" />
