@@ -25,17 +25,12 @@ Data investigation of Bronze Layer before creating Silver Layer to understand po
 The Silver layer contains cleaned and standardized data from the Bronze layer. This layer ensures data quality for downstream Gold tables and dashboard visualizations.
 
 Transformations applied to create clean Silver Layer table (refer to clean_online.sql in sql/silver folder):
-1. Filtered invalid records
 - Removed rows with null customer IDs
 - Removed rows with negative product price
-
-2. Added a derived metric
-- Added line_revenue as Quantity * Price for each transaction
 
 Data quality checks were applied to validate Silver-layer transformation (refer to silver_data_validation.sql in tests folder):
 - Confirmed no null Customer IDs. 
 - Confirmed no negative price. 
-- Confirmed revenue calculation.
 
 Data investigation of Silver Layer before creating Gold Layer to understand potential issues (refer to silver_investigating_data.sql in tests folder):
 
