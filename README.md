@@ -109,27 +109,27 @@ Data quality checks were applied to validate Gold-layer transformation for fact_
 
 # Analytics/Insights
 
-1. Top Customers by Revenue
+1. Top Customers by Revenue (refer to top_customers_by_revenue.sql in analytics folder)
 - Question: Which customers are the most valuable in terms of total revenue and what is their average order value?
 - Business insight: Helps target high-value customers for marketing campaigns or loyalty programs.
 
-2. Top Products by Revenue
+2. Top Products by Revenue (refer to top_products_by_revenue.sql in analytics folder)
 - Question: Which products generate the most revenue and which products sell the most units?
 - Business insight: Helps identify best-selling and highest-revenue products. Can help inform inventory management. 
 
-3. Products with No Revenue
+3. Products with No Revenue (refer to products_with_no_revenue.sql in analytics folder)
 - Question: Which products have generated no revenue?
 - Business insight: Helps identify underperforming or inactive products.
   
-4. Revenue by Month
+4. Revenue by Month (refer to revenue_by_month.sql in analtics folder)
 - Question: How has monthly revenue changed over time?
 - Business insight: Identifies underperforming or inactive products. This is useful for forecasting, marketing plans, and sales analysis.
 
-5. Customer Purchase Activity
+5. Customer Purchase Activity (refer to customer_purchase_activity.sql in analytics folder)
 - Question: Which customers are the most active? How long have they been making purchases, and how frequently?
 - Business insight: Highlights top customers by engagement, showing who places the most orders.
 
-7. Customer Retention
+7. Customer Retention (refer to customer_retention.sql in analytics folder)
 - Question: How do customers who made their first purchase in a given month behave in subsequent months? How many customers from each cohort remain active over time?
 - Busienss insight: Measures customer retention over time, showing how cohorts continue to engage with the business after their first purchase. This can help identify trends in loyalty, potential churn, and effectiveness of onboarding or promotional strategies.
 
