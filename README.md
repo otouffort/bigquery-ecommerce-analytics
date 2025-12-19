@@ -91,5 +91,7 @@ Transformation to create fact_orders table (refer to fact_orders.sql in sql/gold
 ...
 
 Data quality checks were applied to validate Gold-layer transformation for fact_orders table (refer to gold_fact_orders_validation.sql in tests folder):
-
-...
+- Uniqueness of surrogate key
+- No null InvoiceID
+- No null foreign keys
+- Confirmed that total revenue in gold layer matches total revenue in silver layer
