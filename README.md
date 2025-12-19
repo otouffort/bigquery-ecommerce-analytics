@@ -1,4 +1,6 @@
-# bigquery-ecommerce-analytics
+# BigQuery E-commerce Analytics Pipeline
+
+<img width="1080" height="584" alt="ArchitectureDiagram" src="https://github.com/user-attachments/assets/706e57ed-be78-4c0b-a937-b97ab9d4637d" />
 
 # Project Overview
 
@@ -38,7 +40,7 @@ The repository is organized to reflect a full data engineering and analytics wor
 - analytics/: SQL queries answering business questions, such as top products, customer retention, and revenue trends.
 - tests/: Data validation scripts to ensure correctness at each medallion stage (e.g., no null CustomerID, no negative prices, uniqueness checks).
 - dashboard/: visualizations summarizing key metrics and insights (COMING SOON)
-- docs/: Image of architecture (COMING SOON)
+- docs/: Image of architecture diagram
   
 # Bronze Layer: Raw Ingestion & Schema Normalization
 
