@@ -109,12 +109,13 @@ Data quality checks were applied to validate Gold-layer transformation for fact_
 
 # Analytics/Insights
 
-1. Top Products by Revenue
+1. Top Customers by Revenue
 - Question: Which customers are the most valuable in terms of total revenue and what is their average order value?
 - Business insight: Helps target high-value customers for marketing campaigns or loyalty programs.
 - SQL skills: CTEs, Aggregations, Derived Metrics, Joins, Ordering and Filtering
 
-2. 
+2. Top Products by Revenue
+- 
 
 
 ### Fact Orders Optimization
