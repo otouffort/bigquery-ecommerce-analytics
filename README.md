@@ -106,3 +106,18 @@ Data quality checks were applied to validate Gold-layer transformation for fact_
 - No null InvoiceID
 - No null foreign keys
 - Confirmed that total revenue in gold layer matches total revenue in silver layer
+
+# Analytics
+
+1. Top Products by Revenue
+- Question: 
+
+
+
+### Fact Orders Optimization
+
+In a production environment, the `fact_orders` table could be **partitioned by `InvoiceDate`** to improve query performance and reduce scanned data.  
+Additionally, clustering by `CustomerID` and `ProductID` could further speed up queries that filter or aggregate on these columns.  
+
+For this project, partitioning and clustering were not implemented to simplify setup, but the table design is compatible with these optimizations.
+
