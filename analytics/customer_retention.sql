@@ -1,4 +1,4 @@
---Analysis for: For each group of customers who made their first purchase in a given month (cohort), how many of them were active in subsequent months?
+--Analysis for each group of customers who made their first purchase in a given month (cohort), how many of them were active in subsequent months?
 
 WITH first_purchase AS (
     SELECT CustomerID, DATE_TRUNC(MIN(InvoiceDate), MONTH) AS cohort_month
