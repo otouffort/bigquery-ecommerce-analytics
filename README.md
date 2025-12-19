@@ -33,8 +33,17 @@ Data quality checks were applied to validate Silver-layer transformation (refer 
 - Confirmed no negative price. 
 
 Data investigation of Silver Layer before creating Gold Layer to understand potential issues (refer to silver_investigating_data.sql in tests folder):
-
-...
+- Investigation for dim_product gold layer table. 
+  - Check for null StockCodes. Result: 0 rows with null StockCode
+  - Check for StockCode with more than one type of distinct product description. Result: 624 of 4,646 products with multiple variations of product descriptions.
+  - Investigate choosing product description for products with variations of product descriptions based on how frequently it appears.
+- Investigation for dim_customer gold layer table.
+  - Check for null CustomerIDs. Result: 0 rows with null CustomerIDs
+  - Check for CustomerID with more than one country. Result: 13 of 5,939 customers with two associated countries. 
+  - Investigate why the 13 customers have two associated countries. Result: InvoiceDate shows that customer changed their billing/shipping country over time.
+- Investigation for fact_orders gold layer table.
+  - Check for one row per order line item (order line is combination of Invoice, StockCode, and CustomerID). Result: found that the same product appears more than once in the same invoice for the same customer
+  -Investigate why the same product appears more than once in the same invoice for the same customer. Looked into three order line items that had the issue. Result: Noticed that duplicate combination occurs because of price or quantity changes. Shows that silver table reflects a transactional system (order line events) instead of order line item data.
 
 # Gold Layer: Fact and Dimension Tables
 
