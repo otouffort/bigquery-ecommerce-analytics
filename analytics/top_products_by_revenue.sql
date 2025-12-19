@@ -1,4 +1,4 @@
---Top 10 products by revenue. Result: The top product by lifetime revenue is REGENCY CAKESTAND 3 TIER (Product ID: 22423) with 23,431 units sold for a value of $269,736.70
+--Top 10 products by revenue. Result: The top product by revenue is REGENCY CAKESTAND 3 TIER (Product ID: 22423) with 23,431 units sold for a value of $269,736.70
 
 SELECT
     p.ProductID,
