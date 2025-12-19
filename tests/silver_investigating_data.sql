@@ -59,3 +59,33 @@ WHERE CustomerID IN (
     HAVING COUNT(DISTINCT Country) > 1
 )
 ORDER BY CustomerID
+
+--Investigation for fact_orders gold layer table. 
+--Check for null Invoice numbers. Result: 0 rows with null Invoice.
+
+SELECT *
+FROM ecommerce_silver.clean_online_retail
+WHERE Invoice IS NULL
+
+--Check for one row per order line item (order line is combination of Invoice, StockCode, and CustomerID). Result: found that the same product appears more than once in the same invoice for the same customer
+
+SELECT
+    Invoice,
+    StockCode,
+    CustomerID,
+    COUNT(*) AS cnt
+FROM ecommerce_silver.clean_online_retail
+GROUP BY Invoice, StockCode, CustomerID
+HAVING cnt > 1
+LIMIT 10;
+
+--Investigate why the same product appears more than once in the same invoice for the same customer. Looked into three order line items that had the issue. Result: Noticed that duplicate combination occurs because of price or quantity changes. Shows that silver table reflects a transactional system (order line events) instead of order line item data.
+
+SELECT *
+FROM ecommerce_silver.clean_online_retail
+WHERE (Invoice, StockCode, CustomerID) IN (
+    ('C570556', '22273', '16029'),
+    ('C574922', '22635', '15502'),
+    ('C548830', 'M',     '12744')
+)
+ORDER BY Invoice, StockCode, CustomerID;
