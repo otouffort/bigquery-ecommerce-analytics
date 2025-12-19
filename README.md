@@ -42,7 +42,7 @@ Data investigation of Silver Layer before creating Gold Layer to understand pote
   - Check for CustomerID with more than one country. Result: 13 of 5,939 customers with two associated countries. 
   - Investigate why the 13 customers have two associated countries. Result: InvoiceDate shows that customer changed their billing/shipping country over time.
 - Investigation for fact_orders gold layer table. 
-  - Check for null Invoice numbers. Result: 0 rows with null Invoice.
+  - Check for null Invoice IDs. Result: 0 rows with null Invoice.
   - Check for one row per order line item (order line is combination of Invoice, StockCode, and CustomerID). Result: found that the same product appears more than once in the same invoice for the same customer
   -Investigate why the same product appears more than once in the same invoice for the same customer. Looked into three order line items that had the issue. Result: Noticed that duplicate combination occurs because of price or quantity changes. Shows that silver table reflects a transactional system (order line events) instead of order line item data.
 
@@ -130,12 +130,13 @@ Data quality checks were applied to validate Gold-layer transformation for fact_
 - Business insight: Highlights top customers by engagement, showing who places the most orders.
 
 7. Customer Retention
-- Question: 
+- Question: How do customers who made their first purchase in a given month behave in subsequent months? How many customers from each cohort remain active over time?
+- Busienss insight: Measures customer retention over time, showing how cohorts continue to engage with the business after their first purchase. This can help identify trends in loyalty, potential churn, and effectiveness of onboarding or promotional strategies.
 
 ### Fact Orders Optimization
 
-In a production environment, the `fact_orders` table could be **partitioned by `InvoiceDate`** to improve query performance and reduce scanned data.  
-Additionally, clustering by `CustomerID` and `ProductID` could further speed up queries that filter or aggregate on these columns.  
+In a production environment, the fact_orders table could be partitioned by InvoiceDate to improve query performance and reduce scanned data.  
+Additionally, clustering by CustomerID and ProductID could further speed up queries that filter or aggregate on these columns.  
 
 For this project, partitioning and clustering were not implemented to simplify setup, but the table design is compatible with these optimizations.
 
