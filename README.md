@@ -1,5 +1,45 @@
 # bigquery-ecommerce-analytics
 
+# Project Overview
+
+This project demonstrates a full e-commerce data pipeline built using Google BigQuery, showcasing skills in data ingestion, cleaning, transformation, dimensional modeling, and analytics. The dataset used is the Online Retail II dataset from Kaggle, which contains transactional data for an online retail store.
+
+The project follows a medallion architecture:
+- Bronze Layer: Raw transactional data is ingested into BigQuery, preserving the original dataset.
+- Silver Layer: Data is cleaned and standardized, including:
+  - Converting CustomerID to a consistent format
+  - Removing invalid or negative Price values
+  - Removing null CustomerID
+- Gold Layer: Analytics-ready tables are created, including:
+  - Dimension tables: dim_product and dim_customers
+  - Fact table: fact_orders capturing individual order lines with derived revenue metric
+
+Analytics queries were performed to answer business questions such as:
+- Which products and customers generate the most revenue?
+- How does monthly revenue trend over time?
+- Which customers are most active, and how is retention over time?
+- Which products have not generated revenue?
+
+This project highlights:
+- SQL expertise: DML, DDL, joins, aggregations, CTEs, and window functions
+- Data engineering skills: Data cleaning, transformations, star schema modeling, and fact/dimension table creation
+- Business analytics skills: Deriving actionable insights for e-commerce decision-making
+
+The repository includes SQL scripts organized by layer, sample data quality checks, and analytics queries, demonstrating a full end-to-end data workflow.
+
+# Folder Structure
+
+The repository is organized to reflect a full data engineering and analytics workflow, following the medallion architecture (bronze → silver → gold):
+- data/: Contains raw CSV files downloaded manually from Kaggle. This is the starting point for the pipeline.
+- sql/: Organizes all SQL scripts by purpose:
+  - bronze/: Scripts for raw data ingestion into BigQuery.
+  - silver/: Scripts for cleaning, standardizing.
+  - gold/: Scripts for creating dimensional (dim_product, dim_customers) and fact (fact_orders) tables.
+- analytics/: SQL queries answering business questions, such as top products, customer retention, and revenue trends.
+- tests/: Data validation scripts to ensure correctness at each medallion stage (e.g., no null CustomerID, no negative prices, uniqueness checks).
+- dashboard/: visualizations summarizing key metrics and insights (COMING SOON)
+- docs/: Image of architecture (COMING SOON)
+  
 # Bronze Layer: Raw Ingestion & Schema Normalization
 
 The Online Retail dataset was manually uploaded into BigQuery using schema auto-detection due to inconsistent data types in the source CSV. Dataset has 1,067,371 rows of retail data. Customer ID was inferred as a FLOAT (e.g., 17850.0) becausse of the CSV’s formatting.
