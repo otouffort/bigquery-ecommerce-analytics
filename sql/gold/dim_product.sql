@@ -1,4 +1,5 @@
---Product dimension table with product attributes. Product description assigned based on highest frequency count in silver layer table. 
+--Product dimension table with product attributes. Goal is one row per product id.
+--Investigation in silver layer showed product ID can have multiple variations of descriptions. Product description assigned based on highest frequency count in silver layer table. 
 
 CREATE OR REPLACE TABLE ecommerce_gold.dim_product AS
 WITH description_counts AS (
